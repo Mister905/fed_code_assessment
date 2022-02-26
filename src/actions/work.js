@@ -21,6 +21,7 @@ export const get_case_studies = () => async (dispatch) => {
     const res = await axios.get(
       "https://plankdesign.com/wp-json/plank/v1/fed-test/case-studies"
     );
+
     dispatch({
       type: GET_CASE_STUDIES,
       payload: res.data,
