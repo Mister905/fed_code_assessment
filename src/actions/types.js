@@ -1,0 +1,2 @@
+export const GET_CATEGORIES = "GET_CATEGORIES";
+export const GET_CASE_STUDIES = "GET_CASE_STUDIES";

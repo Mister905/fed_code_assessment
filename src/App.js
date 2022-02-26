@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+// Components
+import Work_Header from "./components/work_header/Work_Header";
+import Work_Index from "./components/work_index/Work_Index";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Work_Header />
+      <Work_Index />
     </div>
   );
 }
