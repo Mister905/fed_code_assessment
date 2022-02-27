@@ -1,3 +1,34 @@
 .custom-card {
-    background-color: black !important;
+  background-color: #000 !important;
+}
+
+.bb-white {
+  border-bottom: 2px solid #eeecec !important;
+}
+
+.case-study-heading {
+  font-size: 2rem;
+  margin: 0px;
+  font-weight: bold;
+}
+
+.view-case-study-btn {
+  text-transform: uppercase;
+  background: black !important;
+  color: #eeecec !important;
+  border: 2px solid #eeecec !important;
+  padding: 0px 15px 0px 15px !important;
+  line-height: 33px !important;
+  font-weight: bold !important;
+
+  &:hover {
+    background: #eeecec !important;
+    color: #000 !important;
+    border: 2px solid #000;
+    font-weight: bold !important;
+  }
+}
+
+.padding-0-col {
+  padding: 0px !important;
 }

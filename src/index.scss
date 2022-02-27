@@ -1,9 +1,13 @@
 @import "./components/work_header/Work_Header.scss";
-@import "./components/work_index/Work_Item.scss";
+@import "./components/work_index/Work_Index.scss";
 @import "./components/work_item/Work_Item.scss";
 
 body {
   background-color: black !important;
   color: white !important;
   font-family: 'Roboto', sans-serif;
+}
+
+.mb-0 {
+  margin-bottom: 0px !important;
 }

@@ -19,11 +19,7 @@ function Work_Header() {
       <ul id="nav-tabs" className="tabs tabs-transparent">
         {categories.map(({ title, slug }) => {
           return (
-            <li
-              key={slug}
-              className="tab col m2"
-              onClick={() => console.log(title)}
-            >
+            <li key={slug} className="tab" onClick={() => console.log(title)}>
               <a className="nav-tab-link" href={`#` + slug}>
                 {title}
               </a>
@@ -39,13 +35,13 @@ function Work_Header() {
       <div className="col m10 offset-m1">
         <nav className="nav-extended custom-nav">
           <div className="nav-wrapper">
-            <a href="#" className="brand-logo">
+            <a href="#" className="brand-logo custom-work-logo">
               WORK
             </a>
             <a href="#" data-target="mobile-demo" className="sidenav-trigger">
               <i className="material-icons">menu</i>
             </a>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
+            {/* <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
                 <a href="sass.html">Sass</a>
               </li>
@@ -55,10 +51,19 @@ function Work_Header() {
               <li>
                 <a href="collapsible.html">JavaScript</a>
               </li>
-            </ul>
+            </ul> */}
           </div>
-          <div className="nav-content">
+          <div className="nav-content custom-nav-content">
             {!loading_categories && render_categories()}
+            <div className="row">
+              <div className="col col m12">
+                <div className="row">
+                  <div className="col m11 pr-0">
+                    <div className="nav-underline"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
