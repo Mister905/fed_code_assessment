@@ -1,22 +1,21 @@
 import React from "react";
 
 function Work_Item({ case_study }) {
-
   let { categories, excerpt, link, thumbnail, title } = case_study;
-  
+
+  let { title: category_title } = categories[0];
+
   return (
-    <div className="row">
-      <div className="col s12 m6">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src={thumbnail} />
+    <div className="col m6 card custom-card">
+      <div className="row">
+        <div className="col m4">
+          <img class="activator responsive-img" src={thumbnail} />
+        </div>
+        <div className="col m6">
+          <div className="row">
+            <div className="col m12">{category_title}</div>
           </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">
-              {title}
-            </span>
-            <p>{excerpt}</p>
-          </div>
+          <p>{excerpt}</p>
         </div>
       </div>
     </div>

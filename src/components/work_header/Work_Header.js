@@ -18,7 +18,7 @@ function Work_Header() {
 
   return (
     <div>
-      <nav className="nav-extended">
+      <nav className="nav-extended custom-nav">
         <div className="nav-wrapper">
           <a href="#" className="brand-logo">
             WORK
