@@ -1,49 +1,67 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { get_categories } from "../../actions/work";
+import { useSelector } from "react-redux";
 import M from "materialize-css";
 
 function Work_Header() {
-
   const { categories } = useSelector((state) => state.work);
 
-  useEffect(() => {
-    // let nav_tabs = document.getElementById("nav-tabs");
-    // M.Tabs.init(nav_tabs, {});
-  }, []);
+  const { loading_categories } = useSelector((state) => state.work);
 
-  const render_categories = categories.map((category) => (
-    <li key={category.slug}>{category.title}</li>
-  ));
+  const { selected_category_filter } = useSelector((state) => state.work);
+
+  useEffect(() => {
+    let nav_tabs = document.getElementById("nav-tabs");
+    M.Tabs.init(nav_tabs, {});
+  }, [loading_categories]);
+
+  const render_categories = () => {
+    return (
+      <ul id="nav-tabs" className="tabs tabs-transparent">
+        {categories.map(({ title, slug }) => {
+          return (
+            <li
+              key={slug}
+              className="tab col m2"
+              onClick={() => console.log(title)}
+            >
+              <a className="nav-tab-link" href={`#` + slug}>
+                {title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
 
   return (
-    <div>
-      <nav className="nav-extended custom-nav">
-        <div className="nav-wrapper">
-          <a href="#" className="brand-logo">
-            WORK
-          </a>
-          <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-            <i className="material-icons">menu</i>
-          </a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li>
-              <a href="sass.html">Sass</a>
-            </li>
-            <li>
-              <a href="badges.html">Components</a>
-            </li>
-            <li>
-              <a href="collapsible.html">JavaScript</a>
-            </li>
-          </ul>
-        </div>
-        <div className="nav-content">
-          <ul id="nav-tabs" className="tabs tabs-transparent">
-            {render_categories}
-          </ul>
-        </div>
-      </nav>
+    <div className="row">
+      <div className="col m10 offset-m1">
+        <nav className="nav-extended custom-nav">
+          <div className="nav-wrapper">
+            <a href="#" className="brand-logo">
+              WORK
+            </a>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li>
+                <a href="sass.html">Sass</a>
+              </li>
+              <li>
+                <a href="badges.html">Components</a>
+              </li>
+              <li>
+                <a href="collapsible.html">JavaScript</a>
+              </li>
+            </ul>
+          </div>
+          <div className="nav-content">
+            {!loading_categories && render_categories()}
+          </div>
+        </nav>
+      </div>
     </div>
   );
 }

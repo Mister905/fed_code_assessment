@@ -9,7 +9,7 @@ function Work_Item({ case_study }) {
     <div className="col m6 card custom-card">
       <div className="row">
         <div className="col m4">
-          <img class="activator responsive-img" src={thumbnail} />
+          <img className="activator responsive-img" src={thumbnail} />
         </div>
         <div className="col m6">
           <div className="row">

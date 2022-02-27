@@ -3,19 +3,20 @@ import { GET_CATEGORIES, GET_CASE_STUDIES } from "../actions/types";
 const initial_state = {
   loading_categories: true,
   loading_case_studies: true,
-  categories: [],
+  categories: [{ title: "All", slug: "all" }],
   case_studies: [],
+  selected_category_filter: "All",
 };
 
 export default function (state = initial_state, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_CATEGORIES:
-      let { categories } = payload;
+      let { categories: async_categories } = payload;
 
       return {
         ...state,
-        categories,
+        categories: state.categories.concat(async_categories),
         loading_categories: false,
       };
 
