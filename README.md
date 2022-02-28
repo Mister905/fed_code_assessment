@@ -1,3 +1,20 @@
+# FED Code Assessment
+
+This assessment was created using the following features:
+
+* React
+* Redux for statement management
+* Axios for HTTP request handling
+* Materialize CSS framework for grid and nav tab functionality
+
+Here is a live [deployment](https://fed-code-assessment.netlify.app/) hosted by netlify.
+
+The following [article](https://www.digitalocean.com/community/tutorials/react-making-react-apps-more-accessible) was used as a guide to making the application more accessible and user friendly.
+
+
+The following is default Create React App instructions:
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
