@@ -9,7 +9,9 @@ function Work_Item({ case_study }) {
     <div className="col m6 card custom-card">
       <div className="row custom-card-row">
         <div className="col m4">
-          <img className="activator responsive-img" src={thumbnail} />
+          {thumbnail && (
+            <img className="activator responsive-img" src={thumbnail} />
+          )}
         </div>
         <div className="col m6 custom-card-col">
           <div className="row category-title-row">
