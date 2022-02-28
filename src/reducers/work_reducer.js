@@ -43,12 +43,12 @@ export default function (state = initial_state, action) {
     case FILTER_CASE_STUDIES:
       let { "case-studies": filtered_case_studies } = payload;
 
-      if (state.selected_category_filter != "All") {
+      if (state.selected_category_filter !== "All") {
         return {
           ...state,
           case_studies: filtered_case_studies.filter(
             (case_study) =>
-              case_study.categories[0].title == state.selected_category_filter
+              case_study.categories[0].title === state.selected_category_filter
           ),
           loading_case_studies: false,
         };

@@ -10,7 +10,7 @@ function Work_Item({ case_study }) {
       <div className="row custom-card-row">
         <div className="col m4">
           {thumbnail && (
-            <img className="activator responsive-img" src={thumbnail} />
+            <img className="activator responsive-img" src={thumbnail} alt={excerpt} />
           )}
         </div>
         <div className="col m6 custom-card-col">
