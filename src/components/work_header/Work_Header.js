@@ -38,26 +38,12 @@ function Work_Header() {
 
   return (
     <div className="row">
-      <div className="col m10 offset-m1">
+      <div className="col s12 m10 offset-m1">
         <nav className="nav-extended custom-nav">
           <div className="nav-wrapper">
             <a href="#" className="brand-logo custom-work-logo">
               WORK
             </a>
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-              <i className="material-icons">menu</i>
-            </a>
-            {/* <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li>
-                <a href="sass.html">Sass</a>
-              </li>
-              <li>
-                <a href="badges.html">Components</a>
-              </li>
-              <li>
-                <a href="collapsible.html">JavaScript</a>
-              </li>
-            </ul> */}
           </div>
           <div className="nav-content custom-nav-content">
             {!loading_categories && render_categories()}

@@ -7,12 +7,12 @@ function Work_Item({ case_study }) {
 
   return (
     <div className="col m6 card custom-card">
-      <div className="row">
+      <div className="row custom-card-row">
         <div className="col m4">
           <img className="activator responsive-img" src={thumbnail} />
         </div>
-        <div className="col m6">
-          <div className="row">
+        <div className="col m6 custom-card-col">
+          <div className="row category-title-row">
             <div className="col m12 bb-white padding-0-col">
               <span className="category-title">{category_title}</span>
             </div>

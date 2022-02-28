@@ -16,25 +16,37 @@ function Work_Index() {
     case_studies.slice(i * 2, i * 2 + 2)
   );
 
-  const render_case_studies = case_study_rows.map((case_study_row, i) => (
-    <div className="row" key={i}>
-      {case_study_row.map((case_study) => {
-        return <Work_Item key={case_study.id} case_study={case_study} />;
-      })}
-    </div>
-  ));
+  function render_case_studies() {
+    if (case_studies.length > 0) {
+      return case_study_rows.map((case_study_row, i) => {
+        return (
+          <div className="row" key={i}>
+            {case_study_row.map((case_study) => {
+              return <Work_Item key={case_study.id} case_study={case_study} />;
+            })}
+          </div>
+        );
+      });
+    } else {
+      return (
+        <div className="row">
+          <div className="col m12">Not Available</div>
+        </div>
+      );
+    }
+  }
 
   return (
     <div>
       {loading_case_studies ? (
         <div className="row">
-          <div className="col m12 center-align">
+          <div className="col s12 m12 center-align">
             <Preloader />
           </div>
         </div>
       ) : (
         <div className="row">
-          <div className="col m10 offset-m1">{render_case_studies}</div>
+          <div className="col m10 offset-m1">{render_case_studies()}</div>
         </div>
       )}
     </div>

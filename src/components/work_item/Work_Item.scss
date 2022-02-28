@@ -32,3 +32,17 @@
 .padding-0-col {
   padding: 0px !important;
 }
+
+.custom-card-col {
+  padding: 0 1.5rem !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .category-title-row {
+    margin-top: 50px;
+  }
+
+  .custom-card-row {
+    margin-bottom: 50px;
+  }
+}
