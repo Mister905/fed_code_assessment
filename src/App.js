@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { get_categories, get_case_studies } from "./actions/work";
 
 function App() {
-  
   const dispatch = useDispatch();
 
   useEffect(() => {

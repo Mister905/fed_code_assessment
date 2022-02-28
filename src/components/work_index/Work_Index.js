@@ -1,9 +1,12 @@
 import React from "react";
 import Work_Item from "../work_item/Work_Item";
 import { useSelector } from "react-redux";
+import Preloader from "../preloader/Preloader";
 
 function Work_Index() {
   const { case_studies } = useSelector((state) => state.work);
+
+  const { loading_case_studies } = useSelector((state) => state.work);
 
   // https://stackoverflow.com/a/42393106
   // Create array of N elements, where N is the number of rows needed
@@ -22,10 +25,18 @@ function Work_Index() {
   ));
 
   return (
-    <div className="row">
-      <div className="col m10 offset-m1">
-        <div>{render_case_studies}</div>
-      </div>
+    <div>
+      {loading_case_studies ? (
+        <div className="row">
+          <div className="col m12 center-align">
+            <Preloader />
+          </div>
+        </div>
+      ) : (
+        <div className="row">
+          <div className="col m10 offset-m1">{render_case_studies}</div>
+        </div>
+      )}
     </div>
   );
 }

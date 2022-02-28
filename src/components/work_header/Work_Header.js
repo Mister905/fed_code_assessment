@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import M from "materialize-css";
+import { useDispatch } from "react-redux";
+import { update_selected_filter } from "../../actions/work";
 
 function Work_Header() {
+  const dispatch = useDispatch();
+
   const { categories } = useSelector((state) => state.work);
 
   const { loading_categories } = useSelector((state) => state.work);
-
-  const { selected_category_filter } = useSelector((state) => state.work);
 
   useEffect(() => {
     let nav_tabs = document.getElementById("nav-tabs");
@@ -19,7 +21,11 @@ function Work_Header() {
       <ul id="nav-tabs" className="tabs tabs-transparent">
         {categories.map(({ title, slug }) => {
           return (
-            <li key={slug} className="tab" onClick={() => console.log(title)}>
+            <li
+              key={slug}
+              className="tab"
+              onClick={() => dispatch(update_selected_filter(title))}
+            >
               <a className="nav-tab-link" href={`#` + slug}>
                 {title}
               </a>
