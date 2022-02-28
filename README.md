@@ -3,7 +3,7 @@
 This assessment was created using the following features:
 
 * React
-* Redux for statement management
+* Redux for state management
 * Axios for HTTP request handling
 * Materialize CSS framework for grid and nav tab functionality
 
